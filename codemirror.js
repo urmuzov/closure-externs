@@ -123,31 +123,31 @@ CodeMirrorObj.prototype.markText = function(from, to, className){};
  * <code>className</code> to something that sets a background image. If you specify <code>text</code>, the given text
  * (which may contain HTML) will, by default, replace the line number for that line. If this is not what you want, you
  * can include the string <code>%N%</code> in the text, which will be replaced by the line number.
- * @param {number} line
+ * @param {(number|CodeMirrorLineHandle)} line
  * @param {string=} opt_text
  * @param {string=} opt_className
- * @return {*} TODO: find out what is lineHandle?
+ * @return {CodeMirrorLineHandle}
  */
 CodeMirrorObj.prototype.setMarker = function(line, opt_text, opt_className){};
 /**
  * Clears a marker created with <code>setMarker</code>. <code>line</code> can be either a number or a handle returned
  * by <code>setMarker</code> (since a number may now refer to a different line if something was added or deleted).
- * @param {number} line
+ * @param {(number|CodeMirrorLineHandle)} line
  */
 CodeMirrorObj.prototype.clearMarker = function(line){};
 /**
  * Set a CSS class name for the given line. <code>line</code> can be a number or a line handle (as returned by
  * <code>setMarker</code> or this function). Pass <code>null</code> to clear the class for a line.
- * @param {?number} line
+ * @param {(null|number|CodeMirrorLineHandle)} line
  * @param {string} className
- * @return {*} TODO: find out what is lineHandle?
+ * @return {CodeMirrorLineHandle}
  */
 CodeMirrorObj.prototype.setLineClass = function(line, className){};
 /**
  * Returns the line number, text content, and marker status of the given line, which can be either a number or a handle
  * returned by <code>setMarker</code>. The returned object has the structure
  * <code>{line, text, markerText, markerClass}</code>.
- * @param {number} line
+ * @param {(number|CodeMirrorLineHandle)} line
  * @return {{line:number, text:string, markerText:string, markerClass:string}}
  */
 CodeMirrorObj.prototype.lineInfo = function(line){};
@@ -294,6 +294,11 @@ CodeMirrorFromTextAreaObj.prototype.save = function(){};
  * Remove the editor, and restore the original textarea (with the editor's current content).
  */
 CodeMirrorFromTextAreaObj.prototype.toTextArea = function(){};
+
+/**
+ * @constructor
+ */
+var CodeMirrorLineHandle = function(){};
 
 /**
  * @constructor
