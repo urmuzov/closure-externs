@@ -52,6 +52,8 @@ ace.AceEditor.prototype.setReadOnly = function(readOnly) {};
  */
 ace.AceEditor.prototype.getSession = function() {};
 
+ace.AceEditor.prototype.resize = function() {};
+
 /**
  * @class
  * @constructor
