@@ -359,9 +359,10 @@ var CodeMirror = function(element, opt_options) {};
 
 /**
  * @param {HTMLTextAreaElement} textAreaElement
+ * @param {Object} opt_options
  * @return {CodeMirrorFromTextAreaObj}
  */
-CodeMirror.fromTextArea = function(textAreaElement) {};
+CodeMirror.fromTextArea = function(textAreaElement, opt_options) {};
 /**
  * @param {string} name
  * @param {*} value
